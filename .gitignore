@@ -12,3 +12,26 @@ build_*
 build
 *~
 *.pro.user*
+
+# Added by KM
+*.lo
+*.o
+*.la
+.deps
+.libs
+Makefile
+*.texinfo
+/doc/*.html
+/config.h
+/config.log
+/config.status
+/libtool
+/gl/dirent.h
+/gl/getopt.h
+/gl/stdbool.h
+/gl/stddef.h
+/gl/stdlib.h
+/gl/stg.in.h
+/gl/sys/stat.h
+/gl/time.h
+/gl/unistd.h

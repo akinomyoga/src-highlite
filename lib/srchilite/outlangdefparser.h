@@ -1,19 +1,19 @@
-/* A Bison parser, made by GNU Bison 2.5.  */
+/* A Bison parser, made by GNU Bison 3.0.2.  */
 
 /* Bison interface for Yacc-like parsers in C
-   
-      Copyright (C) 1984, 1989-1990, 2000-2011 Free Software Foundation, Inc.
-   
+
+   Copyright (C) 1984, 1989-1990, 2000-2013 Free Software Foundation, Inc.
+
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
-   
+
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
@@ -26,47 +26,55 @@
    special exception, which will cause the skeleton and the resulting
    Bison output files to be licensed under the GNU General Public
    License without this special exception.
-   
+
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
+#ifndef YY_OUTLANGDEF_OUTLANGDEFPARSER_H_INCLUDED
+# define YY_OUTLANGDEF_OUTLANGDEFPARSER_H_INCLUDED
+/* Debug traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+#if YYDEBUG
+extern int outlangdef_debug;
+#endif
 
-/* Tokens.  */
+/* Token type.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-   /* Put the tokens into the symbol table, so that GDB and other debuggers
-      know about them.  */
-   enum yytokentype {
-     BEGIN_T = 258,
-     END_T = 259,
-     DOC_TEMPLATE_T = 260,
-     NODOC_TEMPLATE_T = 261,
-     STYLE_TEMPLATE_T = 262,
-     STYLE_SEPARATOR_T = 263,
-     BOLD_T = 264,
-     ITALICS_T = 265,
-     UNDERLINE_T = 266,
-     COLOR_T = 267,
-     BG_COLOR_T = 268,
-     FIXED_T = 269,
-     NOTFIXED_T = 270,
-     COLORMAP_T = 271,
-     DEFAULT_T = 272,
-     ONESTYLE_T = 273,
-     TRANSLATIONS_T = 274,
-     EXTENSION_T = 275,
-     ANCHOR_T = 276,
-     REFERENCE_T = 277,
-     INLINE_REFERENCE_T = 278,
-     POSTLINE_REFERENCE_T = 279,
-     POSTDOC_REFERENCE_T = 280,
-     KEY = 281,
-     STRINGDEF = 282,
-     REGEXDEF = 283,
-     LINE_PREFIX_T = 284,
-     LINENUM_T = 285,
-     WRONG_INCLUDE_FILE = 286
-   };
+  enum yytokentype
+  {
+    BEGIN_T = 258,
+    END_T = 259,
+    DOC_TEMPLATE_T = 260,
+    NODOC_TEMPLATE_T = 261,
+    STYLE_TEMPLATE_T = 262,
+    STYLE_SEPARATOR_T = 263,
+    BOLD_T = 264,
+    ITALICS_T = 265,
+    UNDERLINE_T = 266,
+    COLOR_T = 267,
+    BG_COLOR_T = 268,
+    FIXED_T = 269,
+    NOTFIXED_T = 270,
+    COLORMAP_T = 271,
+    DEFAULT_T = 272,
+    ONESTYLE_T = 273,
+    TRANSLATIONS_T = 274,
+    EXTENSION_T = 275,
+    ANCHOR_T = 276,
+    REFERENCE_T = 277,
+    INLINE_REFERENCE_T = 278,
+    POSTLINE_REFERENCE_T = 279,
+    POSTDOC_REFERENCE_T = 280,
+    KEY = 281,
+    STRINGDEF = 282,
+    REGEXDEF = 283,
+    LINE_PREFIX_T = 284,
+    LINENUM_T = 285,
+    WRONG_INCLUDE_FILE = 286
+  };
 #endif
 /* Tokens.  */
 #define BEGIN_T 258
@@ -99,31 +107,27 @@
 #define LINENUM_T 285
 #define WRONG_INCLUDE_FILE 286
 
-
-
-
+/* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef union YYSTYPE
+typedef union YYSTYPE YYSTYPE;
+union YYSTYPE
 {
-
-/* Line 2068 of yacc.c  */
-#line 62 "../../../lib/srchilite/outlangdefparser.yy"
+#line 62 "./outlangdefparser.yy" /* yacc.c:1909  */
 
   int tok ; /* command */
   bool booloption ;
   const std::string * string ; /* string : id, ... */
   int flag ;
 
-
-
-/* Line 2068 of yacc.c  */
-#line 121 "../../../lib/srchilite/outlangdefparser.h"
-} YYSTYPE;
+#line 123 "./outlangdefparser.h" /* yacc.c:1909  */
+};
 # define YYSTYPE_IS_TRIVIAL 1
-# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
+
 extern YYSTYPE outlangdef_lval;
 
+int outlangdef_parse (void);
 
+#endif /* !YY_OUTLANGDEF_OUTLANGDEFPARSER_H_INCLUDED  */
