@@ -7,6 +7,7 @@ xhtmltable = xhtmltable.outlang
 xhtml-css = xhtmlcss.outlang
 esc = esc.outlang
 esc256 = esc256.outlang
+esc256-light_background = esc256-light_background.outlang
 latex = latex.outlang
 latexcolor = latexcolor.outlang
 texinfo = texinfo.outlang
