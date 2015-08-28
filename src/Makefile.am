@@ -98,6 +98,7 @@ OUTLANGFILES = \
 css_common.outlang \
 esc.outlang \
 esc256.outlang \
+esc256-light_background.outlang \
 html_common.outlang \
 html_ref.outlang \
 html_notfixed.outlang \
