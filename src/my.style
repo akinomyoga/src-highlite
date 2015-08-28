@@ -50,7 +50,7 @@ bibtex blue;
 // for diffs
 oldfile orange;
 newfile darkgreen;
-difflines blue; 
+difflines blue;
 
 // for css
 selector purple;

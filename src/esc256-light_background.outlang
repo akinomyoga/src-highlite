@@ -32,7 +32,7 @@ colormap
 "purple"       "38;5;93"
 # white
 "white"        "38;5;7"   # silver
-"gray"         "38;5;238"
+"gray"         "38;5;244"
 "black"        "38;5;16"
 default        "39"       # default color
 end
