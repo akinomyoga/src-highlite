@@ -1,21 +1,41 @@
 extension "txt"
 
-styletemplate "\x1b[$stylem$text\x1b[m"
-color "0;$style"
+styletemplate "\x1b[0;$stylem$text\x1b[m"
+styleseparator ";"
+
+bold "1$style"
+underline "4$style"
+italics "$style"
+color "$style"
 
 colormap
-"blue"     "38;5;75"
-"darkblue" "38;5;33"
-"gray"     "38;5;242"
-"green"    "38;5;70"
-"orange"   "38;5;208"
-"purple"   "38;5;171"
-"red"      "38;5;196"
-"white"    "38;5;7"   # silver
-"yellow"   "38;5;226"
-default    "39"       # default color
+# red
+"red"          "38;5;196"
+"darkred"      "38;5;88"
+"brown"        "38;5;52"
+# yellow
+"yellow"       "38;5;214"
+"brightorange" "38;5;208"
+"orange"       "38;5;166"
+# green
+"brightgreen"  "38;5;46"
+"green"        "38;5;70"
+"darkgreen"    "38;5;28"
+# cyan
+"cyan"         "38;5;73"
+"teal"         "38;5;31"
+# blue
+"blue"         "38;5;68"
+"darkblue"     "38;5;26"
+# magenta
+"pink"         "38;5;132"
+"purple"       "38;5;93"
+# white
+"white"        "38;5;7"   # silver
+"gray"         "38;5;238"
+"black"        "38;5;16"
+default        "39"       # default color
 end
-
 
 ####################
 # Code color help
