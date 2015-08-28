@@ -4,13 +4,31 @@ preproc = "import"
 
 include "number.lang"
 
-normal = '\\"'
-normal = '\\\''
+normal = '\\["\'`$]'
 
-include "c_string.lang"
+#------------------------------------------------------------------------------
+# string literals
+#   strings in shell scripts are completely different from those in C language.
 
-function = 'function[[:blank:]]+([[:alpha:]]|_)[[:word:]]*[[:blank:]]*(\(\))?'
-function = '([[:alpha:]]|_)[[:word:]]*[[:blank:]]*\(\)'
+environment string delim "`" "`" multiline begin
+  specialchar = '\\["$`]'
+end
+
+environment string delim '\$?"' '"' multiline begin
+  specialchar = '\\["$`]'
+end
+
+environment string delim '\$\'' '\'' multiline begin
+  specialchar = '\\[abeEfnrtv\\\'"]|\\c.|\\U[0-9a-fA-F]{1,8}|\\u[0-9a-fA-F]{1,4}|\\x[0-9a-fA-F]{1,2}|\\[0-7]{1,3}'
+end
+
+# single quoted string cannot contain escape characters
+string delim '\'' '\'' multiline
+
+#------------------------------------------------------------------------------
+
+(keyword,normal,function) = `(function)([[:blank:]]+)([^;&|<>()"'\`$[:blank:]]+(?=[[:blank:]]*(?:\(\))?))`
+function = '([^;&|<>()"\'`$[:blank:]=]+(?=[[:blank:]]*\(\)))'
 
 # avoids, in things such as --bind, that words are highlighted as keywords
 normal = '([[:alpha:]]*[-/]+[[:alpha:]]+)+'
@@ -24,10 +42,9 @@ keyword = "alias|bg|bind|break|builtin|caller|case|command|compgen",
 
 # it is considered a variable if there's a =, which is discarded anyway
 variable = '([[:alpha:]]|_)[[:word:]]*(?==)'
-variable = '\$\{([^[:blank:]]+)\}'
+(symbol,variable,symbol) = `(\$\{)([^[:blank:]{}]+)(\})`
 variable = '\$\(([^[:blank:]]+)\)'
-variable = '\$([[:alpha:]]|_)[[:word:]]*'
-variable = '\$([^[:blank:]\']{1})'
+(symbol,variable) = `(\$)((?:[[:alpha:]]|_)[[:word:]]*|[-*@#?$!0]|[1-9][0-9]*)`
 
 # notice that - is not a symbol since it can be used in command line parameters
 symbol = "~","!","%","^","*","(",")","+","=","[",
