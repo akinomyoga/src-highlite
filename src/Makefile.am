@@ -130,7 +130,7 @@ STYLEFILES = texinfo.style esc.style esc256.style lilypond.style r.style json.st
 source_highlightdata_DATA = \
 $(LANGFILES) $(LANGFILES_NOTTOCHECK) $(OUTLANGFILES) \
 $(STYLEFILES) \
-default.style style2.style style3.style \
+default.style my.style style2.style style3.style \
 javalog.style \
 lang.map outlang.map \
 default.css \
