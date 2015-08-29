@@ -16,11 +16,11 @@ comment start '(?:^|(?<=[[:blank:];|&<>()]))#'
 #   strings in shell scripts are completely different from those in C language.
 
 environment string delim "`" "`" multiline begin
-  specialchar = '\\["$`]'
+  specialchar = '\\["$`\\]'
 end
 
 environment string delim '\$?"' '"' multiline begin
-  specialchar = '\\["$`]'
+  specialchar = '\\["$`\\]'
   include "bash_simple_expansion.lang"
 end
 
@@ -34,7 +34,7 @@ string delim '\'' '\'' multiline
 #------------------------------------------------------------------------------
 # function definition
 
-(keyword,normal,function) = `(function)([[:blank:]]+)([^;&|<>()"'\`$[:blank:]]+(?=[[:blank:]]*(?:\(\))?))`
+(keyword,normal,function) = `(\bfunction)([[:blank:]]+)([^;&|<>()"'\`$[:blank:]]+(?=[[:blank:]]*(?:\(\))?))`
 function = '([^;&|<>()"\'`$[:blank:]=]+(?=[[:blank:]]*\(\)))'
 
 #------------------------------------------------------------------------------
